@@ -1,0 +1,13 @@
+.ant-menu-no-underline .ant-menu-item::after {
+  border: none !important; /* 移除下划线 */
+}
+.ant-menu-custom .ant-menu-item:hover {
+  background-color: black !important; /* 背景变黑 */
+}
+.ant-menu-custom .ant-menu-item:hover span {
+  color: white !important; /* 文字变白 */
+}
+.ant-menu-custom .ant-menu-item {
+  height: 70px;
+  line-height: 70px;
+}
