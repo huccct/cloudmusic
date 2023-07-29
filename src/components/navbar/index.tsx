@@ -1,12 +1,14 @@
-import type { MenuProps } from 'antd'
-
-import { Menu } from 'antd'
+import { Menu, type MenuProps } from 'antd'
 
 import React, { useState } from 'react'
 
 import './style/index.scss'
 
 const items: MenuProps['items'] = [
+  {
+    label: <img src="/src/assets/logo.png" className="pt-8px" />,
+    key: 'logo',
+  },
   {
     label: '发现音乐',
     key: 'discover',
@@ -34,7 +36,7 @@ const items: MenuProps['items'] = [
 ]
 
 const index: React.FC = () => {
-  const [current, setCurrent] = useState('mail')
+  const [current, setCurrent] = useState('discover')
 
   const onClick: MenuProps['onClick'] = (e) => {
     console.log('click ', e)
@@ -42,13 +44,15 @@ const index: React.FC = () => {
   }
 
   return (
-    <Menu
-      onClick={onClick}
-      selectedKeys={[current]}
-      mode="horizontal"
-      items={items}
-      className="flex justify-center bg-#242424 text-#ccc h-70px items-center text-14px ant-menu-no-underline ant-menu-custom"
-    />
+    <>
+      <Menu
+        onClick={onClick}
+        selectedKeys={[current]}
+        mode="horizontal"
+        items={items}
+        className="flex justify-center bg-#242424 text-#ccc h-70px items-center text-14px ant-menu-no-underline ant-menu-custom"
+      />
+    </>
   )
 }
 
