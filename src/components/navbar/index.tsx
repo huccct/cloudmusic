@@ -1,6 +1,8 @@
-import { Menu, type MenuProps } from 'antd'
+import { Button, Input, Menu, type MenuProps } from 'antd'
 
 import React, { useState } from 'react'
+
+import { SearchOutlined } from '@ant-design/icons'
 
 import './style/index.scss'
 
@@ -32,6 +34,34 @@ const items: MenuProps['items'] = [
   {
     label: '下载客户端',
     key: 'download',
+  },
+  {
+    label: (
+      <li className="h-70px leading-70px flex items-center w-158px rounded-32px">
+        <Input
+          prefix={<SearchOutlined />}
+          placeholder="音乐/视频/电台/用户"
+          className="bg-white w-158px rounded-32px"
+        />
+      </li>
+    ),
+    key: 'search',
+  },
+  {
+    label: (
+      <li className="h-70px leading-70px flex items-center rounded-20px w-90px h-32px">
+        <Button className="rounded-20px">创作者中心</Button>
+      </li>
+    ),
+    key: 'creator',
+  },
+  {
+    label: (
+      <li>
+        <span>登录</span>
+      </li>
+    ),
+    key: 'login',
   },
 ]
 
