@@ -16,7 +16,7 @@ export default ({ command, mode }: ConfigEnv): UserConfigExport => {
           target: env.VITE_SERVE,
           // 需要代理跨域
           changeOrigin: true,
-          rewrite: (path) => path.replace(/^\/api/, ''),
+          // rewrite: (path) => path.replace(/^\/api/, ''),
         },
       },
     },

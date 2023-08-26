@@ -1,4 +1,4 @@
-import { Button, Input, Menu, Modal, type MenuProps } from 'antd'
+import { Button, Input, Menu, type MenuProps } from 'antd'
 
 import React, { useState } from 'react'
 
@@ -6,21 +6,19 @@ import { SearchOutlined } from '@ant-design/icons'
 
 import SubNavbar from '../sub-navbar'
 
+import useStore from '@/store'
+
+import Login from '@/views/login'
+
 import './style/index.scss'
 
 const index: React.FC = () => {
   const [current, setCurrent] = useState('discover')
-  const [isModalOpen, setIsModalOpen] = useState(false)
+  const { useUser } = useStore()
+  const userStore = useUser()
+
   const showModal = () => {
-    setIsModalOpen(true)
-  }
-
-  const handleOk = () => {
-    setIsModalOpen(false)
-  }
-
-  const handleCancel = () => {
-    setIsModalOpen(false)
+    userStore.handlerIsModalOpen(true)
   }
 
   const onClick: MenuProps['onClick'] = (e) => {
@@ -96,16 +94,7 @@ const index: React.FC = () => {
         className="flex justify-center bg-#242424 text-#ccc h-70px items-center text-14px ant-menu-no-underline ant-menu-custom"
       />
       <SubNavbar />
-      <Modal
-        title="Basic Modal"
-        open={isModalOpen}
-        onOk={handleOk}
-        onCancel={handleCancel}
-      >
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-      </Modal>
+      <Login />
     </>
   )
 }
