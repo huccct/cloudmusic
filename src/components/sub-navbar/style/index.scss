@@ -1,0 +1,30 @@
+.ant-menu-custom2 .ant-menu {
+  height: 34px !important;
+  line-height: 34px !important;
+  background-color: #c20c0c !important;
+}
+
+.ant-menu-custom2 .ant-menu-item {
+  height: 20px;
+  line-height: 20px;
+  border-radius: 20px !important;
+  padding: 0 13px;
+  margin: 7px 17px 0;
+  border: none !important;
+}
+
+.ant-menu-custom2 .ant-menu-item:hover,
+.ant-menu-custom2 .ant-menu-item-selected {
+  background-color: #9b0909 !important;
+}
+
+.ant-menu-custom2 .ant-menu-item span {
+  color: #fff;
+}
+
+.ant-menu-custom2 .ant-menu-item li {
+  height: 20px;
+  padding: 0 13px;
+  margin: 7px 17px 0;
+  border-radius: 20px !important;
+}
